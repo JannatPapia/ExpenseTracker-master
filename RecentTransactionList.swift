@@ -48,7 +48,11 @@ struct RecentTransactionList_Previews: PreviewProvider {
     }()
     
     static var previews: some View {
-        RecentTransactionList()
-            .environmentObject(transactionListVM)
+        Group {
+            RecentTransactionList()
+            RecentTransactionList()
+                .preferredColorScheme(.dark)
+        }
+        .environmentObject(transactionListVM)
     }
 }
