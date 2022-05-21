@@ -17,6 +17,10 @@ final class  TransactionListViewModel: ObservableObject {
     
     private var cancellables = Set<AnyCancellable>()
     
+    init() {
+        getTransactions()
+    }
+    
     func getTransactions() {
         guard let url = URL(string: "https://designcode.io/data/transactions.json") else {
             print("Invalid URL")
@@ -72,7 +76,9 @@ final class  TransactionListViewModel: ObservableObject {
             let dailyExpenses = transactions.filter { $0.dateParsed == date && $0.isExpense }
             let dailyTotal = dailyExpenses.reduce(0) { $0 - $1.signedAmount }
             
+            
             sum += dailyTotal
+            sum = sum.roundedTo2Digits()
             cumulativeSum.append((date.formatted(), sum))
             print(date.formatted(), "dailyTotal:", dailyTotal, "sum:", sum)
         }
