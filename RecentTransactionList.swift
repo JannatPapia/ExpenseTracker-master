@@ -41,7 +41,7 @@ struct RecentTransactionList: View {
 }
 
 struct RecentTransactionList_Previews: PreviewProvider {
-    static let transactionVM: TransactionListViewModel = {
+    static let transactionListVM: TransactionListViewModel = {
         let transactionListVM = TransactionListViewModel()
         transactionListVM.transactions = transationListPreviewData
         return transactionListVM
