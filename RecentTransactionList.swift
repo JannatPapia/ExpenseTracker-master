@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct RecentTransactionList: View {
     @EnvironmentObject var transactionListVM: TransactionListViewModel
     
