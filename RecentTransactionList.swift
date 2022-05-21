@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RecentTransactionList: View {
+    @EnvironmentObject var transactionListVM: TransactionListViewModel
+    
     var body: some View {
         VStack {
             HStack {
@@ -39,7 +41,14 @@ struct RecentTransactionList: View {
 }
 
 struct RecentTransactionList_Previews: PreviewProvider {
+    static let transactionVM: TransactionListViewModel = {
+        let transactionListVM = TransactionListViewModel()
+        transactionListVM.transactions = transationListPreviewData
+        return transactionListVM
+    }()
+    
     static var previews: some View {
         RecentTransactionList()
+            .environmentObject(transactionListVM)
     }
 }
