@@ -23,6 +23,13 @@ struct Transaction: Identifiable, Decodable, Hashable {
     let isExpense:  Bool
     let isEdited: Bool
     
+    var icon: FontAwesomeCode {
+        if let category = Category.all.first(where: {$0.id == categoryId}) {
+            return category.icon
+        }
+        return .question
+    }
+    
     var dateParsed: Date {
         date.dateParsed()
     }
