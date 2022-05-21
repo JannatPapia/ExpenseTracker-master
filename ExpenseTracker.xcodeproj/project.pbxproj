@@ -51,9 +51,6 @@
 		5C702A6D2835825200A9EDA8 = {
 			isa = PBXGroup;
 			children = (
-				5C1583B428395DD200636486 /* TransactionList.swift */,
-				5CFA11B128392DC3001919AE /* RecentTransactionList.swift */,
-				5CFA11AF28391E3B001919AE /* TransactionListViewModel.swift */,
 				5C702A782835825200A9EDA8 /* ExpenseTracker */,
 				5C702A772835825200A9EDA8 /* Products */,
 			);
@@ -74,6 +71,9 @@
 				5C69155628373F6800515211 /* TransactionRow.swift */,
 				5C702A7B2835825200A9EDA8 /* ContentView.swift */,
 				5CA2EF0C2836E85800CB242D /* TransactionModel.swift */,
+				5CFA11B128392DC3001919AE /* RecentTransactionList.swift */,
+				5CFA11AF28391E3B001919AE /* TransactionListViewModel.swift */,
+				5C1583B428395DD200636486 /* TransactionList.swift */,
 				5CA2EF0A28369CEF00CB242D /* Extention.swift */,
 				5C702A7D2835825400A9EDA8 /* Assets.xcassets */,
 				5C702A7F2835825400A9EDA8 /* Preview Content */,
