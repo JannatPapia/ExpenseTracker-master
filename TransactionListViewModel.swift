@@ -46,4 +46,12 @@ final class  TransactionListViewModel: ObservableObject {
             }
             .store(in: &cancellables)
     }
+    
+    func groupTransactionsByMonth() -> TransactionGroup {
+        guard !transactions.isEmpty else {return [:] }
+        
+        let groupedTransactions = TransactionGroup(grouping: transactions) { $0.month }
+        
+        return groupedTransactions
+    }
 }
