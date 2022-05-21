@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C1583B528395DD200636486 /* TransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1583B428395DD200636486 /* TransactionList.swift */; };
 		5C69155528373E0100515211 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C69155428373E0100515211 /* PreviewData.swift */; };
 		5C69155728373F6800515211 /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C69155628373F6800515211 /* TransactionRow.swift */; };
 		5C69155A283773C400515211 /* SwiftUIFontIcon in Frameworks */ = {isa = PBXBuildFile; productRef = 5C691559283773C400515211 /* SwiftUIFontIcon */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C1583B428395DD200636486 /* TransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionList.swift; sourceTree = "<group>"; };
 		5C69155428373E0100515211 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		5C69155628373F6800515211 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
 		5C702A762835825200A9EDA8 /* ExpenseTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpenseTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +51,7 @@
 		5C702A6D2835825200A9EDA8 = {
 			isa = PBXGroup;
 			children = (
+				5C1583B428395DD200636486 /* TransactionList.swift */,
 				5CFA11B128392DC3001919AE /* RecentTransactionList.swift */,
 				5CFA11AF28391E3B001919AE /* TransactionListViewModel.swift */,
 				5C702A782835825200A9EDA8 /* ExpenseTracker */,
@@ -164,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C69155528373E0100515211 /* PreviewData.swift in Sources */,
+				5C1583B528395DD200636486 /* TransactionList.swift in Sources */,
 				5CFA11B228392DC3001919AE /* RecentTransactionList.swift in Sources */,
 				5CA2EF0D2836E85800CB242D /* TransactionModel.swift in Sources */,
 				5C702A7C2835825200A9EDA8 /* ContentView.swift in Sources */,
