@@ -28,7 +28,13 @@ struct RecentTransactionList: View {
                     .foregroundColor(Color.text)
                 }
             }
+            .padding(.top)
         }
+        .padding()
+        .background(Color.systemBackground)
+        .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+        .shadow(color: Color.primary.opacity(0.2), radius: 10, x: 0, y: 5)
+        
     }
 }
 
