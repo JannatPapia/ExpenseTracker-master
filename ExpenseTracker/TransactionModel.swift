@@ -8,7 +8,23 @@
 import Foundation
 import SwiftUIFontIcon
 
-
+/*
+ {
+   "id": 21,
+   "date": "02/04/2022",
+   "institution": "Desjardins",
+   "account": "Visa Desjardins",
+   "merchant": "Uber.com",
+   "amount": 10.35,
+   "type": "debit",
+   "categoryId": 102,
+   "category": "Taxi",
+   "isPending": false,
+   "isTransfer": false,
+   "isExpense": true,
+   "isEdited": false
+ },
+ */
 
 // MARK: - Transaction
 struct Transaction: Codable , Identifiable,Hashable {
@@ -19,19 +35,18 @@ struct Transaction: Codable , Identifiable,Hashable {
     let merchant: String
     let amount: Double
     let type: TransactionType
-    let categoryID: Int
+    let categoryId: Int
     let category: String
     let isPending, isTransfer, isExpense, isEdited: Bool
     
     enum CodingKeys: String, CodingKey {
-        case id, date, institution, account, merchant, amount, type
-        case categoryID = "categoryId"
+        case id, date, institution, account, merchant, amount, type , categoryId
         case category, isPending, isTransfer, isExpense, isEdited
     }
     
     
     var icon: FontAwesomeCode {
-        if let category = Category.all.first(where: {$0.id == categoryID}) {
+        if let category = Category.all.first(where: {$0.id == categoryId}) {
             return category.icon
         }
         return .question
