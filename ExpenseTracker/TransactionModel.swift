@@ -18,7 +18,7 @@ struct Transaction: Codable , Identifiable,Hashable {
     let account: String
     let merchant: String
     let amount: Double
-    let type: TypeEnum
+    let type: TransactionType
     let categoryID: Int
     let category: String
     let isPending, isTransfer, isExpense, isEdited: Bool
@@ -50,12 +50,8 @@ struct Transaction: Codable , Identifiable,Hashable {
         }
 }
 
-enum TypeEnum: String, Codable {
-    case credit = "credit"
-    case debit = "debit"
-}
 
-enum TransactionType: String {
+enum TransactionType: String,Codable {
     case debit = "debit"
     case credit = "credit"
 }
