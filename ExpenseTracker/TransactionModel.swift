@@ -64,7 +64,7 @@ struct Transaction: Codable , Identifiable,Hashable {
 }
 
 
-enum TransactionType: String,Codable {
+enum TransactionType: String {
     case debit = "debit"
     case credit = "credit"
 }
