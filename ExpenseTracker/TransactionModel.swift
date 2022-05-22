@@ -14,8 +14,8 @@ import SwiftUIFontIcon
 struct Transaction: Codable , Identifiable,Hashable {
     let id: Int
     let date: String
-    let institution: Institution
-    let account: Account
+    let institution: String
+    let account: String
     let merchant: String
     let amount: Double
     let type: TypeEnum
@@ -48,15 +48,6 @@ struct Transaction: Codable , Identifiable,Hashable {
         var month: String {
             dateParsed.formatted(.dateTime.year().month(.wide))
         }
-}
-
-enum Account: String, Codable {
-    case personalChequingAccount = "Personal chequing account"
-    case visaDesjardins = "Visa Desjardins"
-}
-
-enum Institution: String, Codable {
-    case desjardins = "Desjardins"
 }
 
 enum TypeEnum: String, Codable {
