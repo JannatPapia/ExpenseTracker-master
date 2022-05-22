@@ -34,7 +34,7 @@ struct Transaction: Codable , Identifiable,Hashable {
     let account: String
     let merchant: String
     let amount: Double
-    let type: TransactionType
+    let type: TransactionType.RawValue
     let categoryId: Int
     let category: String
     let isPending: Bool
@@ -55,7 +55,7 @@ struct Transaction: Codable , Identifiable,Hashable {
     }
     
     var signedAmount: Double {
-        return type.rawValue == TransactionType.credit.rawValue ? amount : -amount
+        return type == TransactionType.credit.rawValue ? amount : -amount
     }
     
     var month: String {
