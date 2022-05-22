@@ -49,19 +49,19 @@ struct RecentTransactionList: View {
     }
 }
 
-//struct RecentTransactionList_Previews: PreviewProvider {
-//    static let transactionListVM: TransactionListViewModel = {
-//        let transactionListVM = TransactionListViewModel()
-//        transactionListVM.transactions = transationListPreviewData
-//        return transactionListVM
-//    }()
-//    
-//    static var previews: some View {
-//        Group {
-//            RecentTransactionList()
-//            RecentTransactionList()
-//                .preferredColorScheme(.dark)
-//        }
-//        .environmentObject(transactionListVM)
-//    }
-//}
+struct RecentTransactionList_Previews: PreviewProvider {
+    static let transactionListVM: TransactionListViewModel = {
+        let transactionListVM = TransactionListViewModel()
+        transactionListVM.transactions = transationListPreviewData
+        return transactionListVM
+    }()
+    
+    static var previews: some View {
+        Group {
+            RecentTransactionList()
+            RecentTransactionList()
+                .preferredColorScheme(.dark)
+        }
+        .environmentObject(transactionListVM)
+    }
+}

@@ -61,23 +61,23 @@ struct ContentView: View {
         .accentColor(.primary)
     }
 }
-//
-//struct ContentView_Previews: PreviewProvider {
-//    static let transactionListVM: TransactionListViewModel = {
-//        let transactionListVM = TransactionListViewModel()
-//        transactionListVM.transactions = transationListPreviewData
-//        return transactionListVM
-//    }()
-//    static var previews: some View {
-// //       Group {
-//        Group {
-//            ContentView()
-//            ContentView()
-//                .preferredColorScheme(.dark)
-//        }
-//                .environmentObject(transactionListVM)
-//  //          ContentView()
-//       //         .preferredColorScheme(.dark)
-//  //      }
-//    }
-//}
+
+struct ContentView_Previews: PreviewProvider {
+    static let transactionListVM: TransactionListViewModel = {
+        let transactionListVM = TransactionListViewModel()
+        transactionListVM.transactions = transationListPreviewData
+        return transactionListVM
+    }()
+    static var previews: some View {
+ //       Group {
+        Group {
+            ContentView()
+            ContentView()
+                .preferredColorScheme(.dark)
+        }
+                .environmentObject(transactionListVM)
+  //          ContentView()
+       //         .preferredColorScheme(.dark)
+  //      }
+    }
+}

@@ -50,13 +50,13 @@ struct TransactionRow: View {
         .padding([.top, .bottom], 8)
     }
 }
-//
-//struct TransactionRow_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Group {
-//            TransactionRow(transaction: transactionPreviewData)
-//            TransactionRow(transaction: transactionPreviewData)
-//                .preferredColorScheme(.dark)
-//        }
-//    }
-//}
+
+struct TransactionRow_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            TransactionRow(transaction: transactionPreviewData)
+            TransactionRow(transaction: transactionPreviewData)
+                .preferredColorScheme(.dark)
+        }
+    }
+}
