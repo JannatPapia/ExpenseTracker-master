@@ -37,12 +37,10 @@ struct Transaction: Codable , Identifiable,Hashable {
     let type: TransactionType
     let categoryId: Int
     let category: String
-    let isPending, isTransfer, isExpense, isEdited: Bool
-    
-    enum CodingKeys: String, CodingKey {
-        case id, date, institution, account, merchant, amount, type , categoryId
-        case category, isPending, isTransfer, isExpense, isEdited
-    }
+    let isPending: Bool
+    let isTransfer: Bool
+    let isExpense: Bool
+    let isEdited: Bool
     
     
     var icon: FontAwesomeCode {
