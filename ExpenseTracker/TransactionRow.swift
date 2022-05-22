@@ -45,18 +45,18 @@ struct TransactionRow: View {
             //MARK: transaction Amount
             Text(transaction.signedAmount, format: .currency(code: "USD"))
                 .bold()
-                .foregroundColor(transaction.type == TransactionType.credit.rawValue ? Color.text: .primary)
+                .foregroundColor(transaction.type.rawValue == TransactionType.credit.rawValue ? Color.text: .primary)
         }
         .padding([.top, .bottom], 8)
     }
 }
-
-struct TransactionRow_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            TransactionRow(transaction: transactionPreviewData)
-            TransactionRow(transaction: transactionPreviewData)
-                .preferredColorScheme(.dark)
-        }
-    }
-}
+//
+//struct TransactionRow_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Group {
+//            TransactionRow(transaction: transactionPreviewData)
+//            TransactionRow(transaction: transactionPreviewData)
+//                .preferredColorScheme(.dark)
+//        }
+//    }
+//}

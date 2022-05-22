@@ -33,26 +33,26 @@ struct TransactionList: View {
         .navigationBarTitleDisplayMode(.inline)
     }
 }
-
-struct TransactionList_Previews: PreviewProvider {
-    static let transactionListVM: TransactionListViewModel = {
-        let transactionListVM = TransactionListViewModel()
-        transactionListVM.transactions = transationListPreviewData
-        return transactionListVM
-    }()
-    
-    static var previews: some View {
-        
-        Group {
-            NavigationView {
-            TransactionList()
-            }
-            NavigationView {
-            TransactionList()
-                    .preferredColorScheme(.dark)
-            }
-               
-        }
-        .environmentObject(transactionListVM)
-    }
-}
+//
+//struct TransactionList_Previews: PreviewProvider {
+//    static let transactionListVM: TransactionListViewModel = {
+//        let transactionListVM = TransactionListViewModel()
+//        transactionListVM.transactions = transationListPreviewData
+//        return transactionListVM
+//    }()
+//    
+//    static var previews: some View {
+//        
+//        Group {
+//            NavigationView {
+//            TransactionList()
+//            }
+//            NavigationView {
+//            TransactionList()
+//                    .preferredColorScheme(.dark)
+//            }
+//               
+//        }
+//        .environmentObject(transactionListVM)
+//    }
+//}
