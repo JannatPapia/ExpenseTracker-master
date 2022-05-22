@@ -22,7 +22,7 @@ struct Transaction: Codable , Identifiable,Hashable {
     let categoryID: Int
     let category: String
     let isPending, isTransfer, isExpense, isEdited: Bool
-
+    
     enum CodingKeys: String, CodingKey {
         case id, date, institution, account, merchant, amount, type
         case categoryID = "categoryId"
@@ -30,24 +30,24 @@ struct Transaction: Codable , Identifiable,Hashable {
     }
     
     
-        var icon: FontAwesomeCode {
-            if let category = Category.all.first(where: {$0.id == categoryID}) {
-                return category.icon
-            }
-            return .question
+    var icon: FontAwesomeCode {
+        if let category = Category.all.first(where: {$0.id == categoryID}) {
+            return category.icon
         }
+        return .question
+    }
     
-        var dateParsed: Date {
-            date.dateParsed()
-        }
+    var dateParsed: Date {
+        date.dateParsed()
+    }
     
-        var signedAmount: Double {
-            return type.rawValue == TransactionType.credit.rawValue ? amount : -amount
-        }
+    var signedAmount: Double {
+        return type.rawValue == TransactionType.credit.rawValue ? amount : -amount
+    }
     
-        var month: String {
-            dateParsed.formatted(.dateTime.year().month(.wide))
-        }
+    var month: String {
+        dateParsed.formatted(.dateTime.year().month(.wide))
+    }
 }
 
 
