@@ -39,7 +39,7 @@ struct Transaction: Codable , Identifiable,Hashable {
     let category: String
     let isPending: Bool
     let isTransfer: Bool
-    let isExpense: Bool
+    let isExpense:  Bool
     let isEdited: Bool
     
     
