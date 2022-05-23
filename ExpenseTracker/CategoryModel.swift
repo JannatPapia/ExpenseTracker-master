@@ -78,32 +78,3 @@ extension Category {
     static let all: [Category] = categories + subCategories
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
