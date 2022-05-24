@@ -10,6 +10,7 @@
 		5C1583B528395DD200636486 /* TransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1583B428395DD200636486 /* TransactionList.swift */; };
 		5C1583B82839657B00636486 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 5C1583B72839657B00636486 /* Collections */; };
 		5C1583BB2839679800636486 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 5C1583BA2839679800636486 /* SwiftUICharts */; };
+		5C21768A283C01710067D67A /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C217689283C01710067D67A /* data.json */; };
 		5C69155528373E0100515211 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C69155428373E0100515211 /* PreviewData.swift */; };
 		5C69155728373F6800515211 /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C69155628373F6800515211 /* TransactionRow.swift */; };
 		5C69155A283773C400515211 /* SwiftUIFontIcon in Frameworks */ = {isa = PBXBuildFile; productRef = 5C691559283773C400515211 /* SwiftUIFontIcon */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		5C1583B428395DD200636486 /* TransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionList.swift; sourceTree = "<group>"; };
+		5C217689283C01710067D67A /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = SOURCE_ROOT; };
 		5C69155428373E0100515211 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		5C69155628373F6800515211 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
 		5C702A762835825200A9EDA8 /* ExpenseTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpenseTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +75,7 @@
 		5C702A782835825200A9EDA8 /* ExpenseTracker */ = {
 			isa = PBXGroup;
 			children = (
+				5C217689283C01710067D67A /* data.json */,
 				5C702A792835825200A9EDA8 /* ExpenseTrackerApp.swift */,
 				5C69155628373F6800515211 /* TransactionRow.swift */,
 				5C702A7B2835825200A9EDA8 /* ContentView.swift */,
@@ -166,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C702A812835825400A9EDA8 /* Preview Assets.xcassets in Resources */,
+				5C21768A283C01710067D67A /* data.json in Resources */,
 				5C702A7E2835825400A9EDA8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
