@@ -1,6 +1,7 @@
 
-[
-  "data":{
+{
+  "data": [
+  {
     "id": 25,
     "date": "02/16/2022",
     "institution": "Desjardins",
@@ -376,3 +377,4 @@
     "isEdited": false
   }
  ]
+}

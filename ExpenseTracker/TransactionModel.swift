@@ -27,7 +27,7 @@ import SwiftUIFontIcon
  */
 
 // MARK: - Transaction
-struct Transaction: Codable , Identifiable,Hashable {
+struct Transaction: Codable , Identifiable, Hashable {
     let id: Int
     let date: String
     let institution: String

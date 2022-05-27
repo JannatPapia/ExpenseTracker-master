@@ -8,51 +8,70 @@
 import Foundation
 import Combine
 import Collections
+//import UIKit
 
 typealias TransactionGroup = OrderedDictionary<String, [Transaction]>
 typealias TransactionPrefixSum = [(String, Double)]
 
-final class  TransactionListViewModel: ObservableObject {
-    @Published var transactions: [Transaction] = []
+final class  TransactionListViewModel:  ObservableObject {
+ //   @Published var transactions: Transaction?
+    var transactions: [Transaction] = []
     
-    private var cancellables = Set<AnyCancellable>()
+//    private var cancellables = Set<AnyCancellable>()
     
     init() {
         getTransactions()
     }
+//    required init(coder decoder: NSCoder) {
+//        super.init(coder: decoder)!
+//    }
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
     func getTransactions() {
-        guard let url = URL(string: "https://designcode.io/data/transactions.json") else {
-            print("Invalid URL")
+        guard let path = Bundle.main.path(forResource: "data", ofType: "json") else {
             return
         }
+        let url = URL(fileURLWithPath: path)
+                do {
+            let jsonData = try Data(contentsOf: url)
+            transactions = try JSONDecoder().decode([Transaction].self, from: jsonData)
+        }
+        catch {
+            print("Invalid URL")
+        }
+ //       guard let url = URL(string: "https://designcode.io/data/transactions.json") else {
+        //    print("Invalid URL")
+   //         return
+        }
         
-        URLSession.shared.dataTaskPublisher(for: url)
-            .tryMap{ (data, response) -> Data in
-                guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-                    dump(response)
-                    throw URLError(.badServerResponse)
-                }
-                
-                return data
-                
-            }
-            .decode(type: [Transaction].self, decoder: JSONDecoder())
-            .receive(on: DispatchQueue.main)
-            .sink { completion in
-                switch completion {
-                case.failure(let error):
-                    print("Error fetching transactions:", error.localizedDescription)
-                case.finished:
-                    print("Finished fetching transactions")
-                }
-            } receiveValue: { [weak self] result in
-                self?.transactions = result
-                dump(self?.transactions)
-            }
-            .store(in: &cancellables)
-    }
+//             URLSession.shared.dataTaskPublisher(for: url)
+//            .tryMap{ (data, response) -> Data in
+//                guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+//                    dump(response)
+//                    throw URLError(.badServerResponse)
+//                }
+//
+//                return data
+//
+//            }
+//            .decode(type: [Transaction].self, decoder: JSONDecoder())
+//            .receive(on: DispatchQueue.main)
+//            .sink { completion in
+//                switch completion {
+//                case.failure(let error):
+//                    print("Error fetching transactions:", error.localizedDescription)
+//                case.finished:
+//                    print("Finished fetching transactions")
+//                }
+//            } receiveValue: { [weak self] result in
+//                self?.transactions = result
+//                dump(self?.transactions)
+//            }
+//            .store(in: &cancellables)
     
+
     func groupTransactionsByMonth() -> TransactionGroup {
         guard !transactions.isEmpty else {return [:] }
         
